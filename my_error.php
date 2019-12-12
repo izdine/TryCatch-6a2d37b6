@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -7,25 +8,26 @@
   <body>
 
   <form  method="post">
-    <input type="text" id="login"placeholder="login" name=login>
-    <input type="submit" name="button" value=""></input>
+    <input type="text" id="login"placeholder="<10" name=in>
+    <input type="text" id="login"placeholder="0<" name=inv>
+    <input type="submit" name="button" value="0/10"></input>
   </form>
 <?php
-function countDown()
-{
-if ($_POST["login"] > 10 && $_POST < 1) {
-  throw new Exception('ERROR');
+function inverse($x) {
+    if (!$x) {
+        throw new Exception('Division by zero.');
+    }
+    return 1/$x;
 }
-return
-}
-try {
-    echo inverse(10) . "\n";
-    echo inverse(0) . "\n";
-} catch (Exception $a) {
-    echo 'Er is iets mis gegaan: ', $a->getMessage(), "\n";
-}
-echo "Er is iets mis gegaan";
 
+try {
+    echo inverse($_POST["in"]) . "\n";
+    echo inverse($_POST["inv"]) . "\n";
+} catch (Exception $e) {
+    echo 'Caught exception: ',  $e->getMessage(), "\n";
+}
+
+echo "er is iets mis gegaan" . PHP_EOL;
  ?>
 
   </body>
